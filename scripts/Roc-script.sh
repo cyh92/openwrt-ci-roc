@@ -54,17 +54,31 @@ mv -f package/frp feeds/packages/net/frp
 git_sparse_clone frp https://github.com/laipeng668/luci applications/luci-app-frpc applications/luci-app-frps
 mv -f package/luci-app-frpc feeds/luci/applications/luci-app-frpc
 mv -f package/luci-app-frps feeds/luci/applications/luci-app-frps
+#主题
 git clone --depth=1 https://github.com/jerrykuku/luci-theme-argon feeds/luci/themes/luci-theme-argon
 git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config feeds/luci/applications/luci-app-argon-config
-git clone --depth=1 https://github.com/eamonxg/luci-theme-aurora feeds/luci/themes/luci-theme-aurora
-git clone --depth=1 https://github.com/eamonxg/luci-app-aurora-config feeds/luci/applications/luci-app-aurora-config
-git clone --depth=1 https://github.com/sbwml/luci-app-openlist2 package/openlist2
-git clone --depth=1 https://github.com/gdy666/luci-app-lucky package/luci-app-lucky
-git clone --depth=1 https://github.com/tty228/luci-app-wechatpush package/luci-app-wechatpush
-git clone --depth=1 https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
-git clone --depth=1 https://github.com/laipeng668/luci-app-gecoosac package/luci-app-gecoosac
+
+#git clone --depth=1 https://github.com/eamonxg/luci-theme-aurora feeds/luci/themes/luci-theme-aurora
+#git clone --depth=1 https://github.com/eamonxg/luci-app-aurora-config feeds/luci/applications/luci-app-aurora-config
+#git clone --depth=1 https://github.com/sbwml/luci-app-openlist2 package/openlist2
+#git clone --depth=1 https://github.com/gdy666/luci-app-lucky package/luci-app-lucky
+#git clone --depth=1 https://github.com/tty228/luci-app-wechatpush package/luci-app-wechatpush
+#git clone --depth=1 https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 git clone --depth=1 https://github.com/NONGFAH/luci-app-athena-led package/luci-app-athena-led
 chmod +x package/luci-app-athena-led/root/etc/init.d/athena_led package/luci-app-athena-led/root/usr/sbin/athena-led
+
+#在线设备
+git clone --depth=1 https://github.com/danchexiaoyang/luci-app-onliner package/luci-app-onliner
+#网络设置向导
+git clone https://github.com/sirpdboy/luci-app-netwizard package/luci-app-netwizard
+#高级设置-Plus
+git clone https://github.com/sirpdboy/luci-app-advancedplus package/luci-app-advancedplus
+#家长控制
+#git clone https://github.com/sirpdboy/luci-app-parentcontrol package/luci-app-parentcontrol
+#网络设置
+git clone https://github.com/kiddin9/luci-app-wizard package/luci-app-wizard
+#集客AC控制器
+git clone --depth=1 https://github.com/laipeng668/luci-app-gecoosac package/luci-app-gecoosac
 
 ### PassWall & OpenClash ###
 
