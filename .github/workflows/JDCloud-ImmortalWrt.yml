@@ -2,6 +2,11 @@ name: JDCloud-ImmortalWrt
 
 on:
   workflow_dispatch:
+    inputs:  
+      defaultIP:
+        description: '管理地址IP'
+        required: true
+        default: '192.168.3.1'    
   workflow_call:
   # schedule:
   #   - cron: 0 20 * * *
@@ -101,7 +106,7 @@ jobs:
       run: |
         chmod +x $DIY_SCRIPT
         cd $OPENWRT_PATH
-        $GITHUB_WORKSPACE/$DIY_SCRIPT
+        $GITHUB_WORKSPACE/$DIY_SCRIPT ${{ github.event.inputs.defaultIP }}
 
     - name: Download DL Package(下载DL软件包)
       run: |
