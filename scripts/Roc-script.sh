@@ -2,7 +2,6 @@
 set -Eeuo pipefail
 
 # 修改默认IP & 固件名称 & 编译署名和时间
-echo "设备IP参数为：$1";
 sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
 sed -i "s/hostname='.*'/hostname='Roc'/g" package/base-files/files/bin/config_generate
 luci_system_js="feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js"
@@ -103,21 +102,6 @@ git clone --depth=1 https://github.com/laipeng668/luci-app-gecoosac package/luci
 git clone --depth=1 https://github.com/NONGFAH/luci-app-athena-led package/luci-app-athena-led
 chmod +x package/luci-app-athena-led/root/etc/init.d/athena_led package/luci-app-athena-led/root/usr/sbin/athena-led
 
-#在线设备
-git clone --depth=1 https://github.com/xx-vv/luci-app-onliner package/luci-app-onliner
-#网络设置向导
-#git clone https://github.com/sirpdboy/luci-app-netwizard package/luci-app-netwizard
-#高级设置-Plus
-git clone https://github.com/sirpdboy/luci-app-advancedplus package/luci-app-advancedplus
-#家长控制
-#git clone https://github.com/sirpdboy/luci-app-parentcontrol package/luci-app-parentcontrol
-#网络设置
-#git clone https://github.com/kiddin9/luci-app-wizard package/luci-app-wizard
-#集客AC控制器
-git clone --depth=1 https://github.com/laipeng668/luci-app-gecoosac package/luci-app-gecoosac
-#NetWiz(网络设置向导) 
-git clone --depth=1 https://github.com/huchd0/luci-app-netwiz package/luci-app-netwiz
-
 ### PassWall & OpenClash ###
 
 # 移除 OpenWrt Feeds 自带的核心库
@@ -133,6 +117,21 @@ git clone --depth=1 https://github.com/vernesong/OpenClash package/luci-app-open
 
 # 清理 PassWall 的 chnlist 规则文件
 echo "baidu.com"  > package/luci-app-passwall/luci-app-passwall/root/usr/share/passwall/rules/chnlist
+
+#在线设备
+git clone --depth=1 https://github.com/xx-vv/luci-app-onliner package/luci-app-onliner
+#网络设置向导
+#git clone https://github.com/sirpdboy/luci-app-netwizard package/luci-app-netwizard
+#高级设置-Plus
+git clone https://github.com/sirpdboy/luci-app-advancedplus package/luci-app-advancedplus
+#家长控制
+#git clone https://github.com/sirpdboy/luci-app-parentcontrol package/luci-app-parentcontrol
+#网络设置
+#git clone https://github.com/kiddin9/luci-app-wizard package/luci-app-wizard
+#集客AC控制器
+git clone --depth=1 https://github.com/laipeng668/luci-app-gecoosac package/luci-app-gecoosac
+#NetWiz(网络设置向导) 
+git clone --depth=1 https://github.com/huchd0/luci-app-netwiz package/luci-app-netwiz
 
 ./scripts/feeds update -i -a
 ./scripts/feeds install -a
