@@ -129,7 +129,7 @@ git clone https://github.com/sirpdboy/luci-app-advancedplus package/luci-app-adv
 #网络设置
 #git clone https://github.com/kiddin9/luci-app-wizard package/luci-app-wizard
 #集客AC控制器
-git clone --depth=1 https://github.com/laipeng668/luci-app-gecoosac package/luci-app-gecoosac
+#git clone --depth=1 https://github.com/laipeng668/luci-app-gecoosac package/luci-app-gecoosac
 #NetWiz(网络设置向导) 
 git clone --depth=1 https://github.com/huchd0/luci-app-netwiz package/luci-app-netwiz
 
