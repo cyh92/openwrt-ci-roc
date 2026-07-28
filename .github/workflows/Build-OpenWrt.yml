@@ -257,7 +257,7 @@ jobs:
       with:
         name: ${{ env.DATE }} for ${{ inputs.firmware_tag }}
         allowUpdates: true
-        tag: ${{ inputs.firmware_tag }}-v${{ env.DATE }}
+        tag: ${{ inputs.firmware_tag }}-v${{ env.DATE | replace: ' ', '' | replace: ':', '' }}
         token: ${{ github.token }}
         artifacts: ${{ env.FIRMWARE_PATH }}/*
         body: |
