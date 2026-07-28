@@ -6,14 +6,18 @@ on:
       defaultIP:
         description: '管理地址IP'
         required: true
-        default: '192.168.3.1'    
+        default: '192.168.3.1'   
+      branch:
+          description: '请输入要编译的分支名'
+          required: true
+          default: 'master'
   workflow_call:
   # schedule:
   #   - cron: 0 20 * * *
 
 env:
   REPO_URL: https://github.com/laipeng668/immortalwrt.git
-  REPO_BRANCH: master
+  REPO_BRANCH: ${{ github.event.inputs.branch }}
   CONFIG_FILE: configs/JDCloud.config
   GENERAL_CONFIG_FILE: configs/General.config
   DIY_SCRIPT: scripts/Roc-script.sh
